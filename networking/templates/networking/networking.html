@@ -1,0 +1,118 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+
+<div class="networking">
+
+<div class="search-container">
+    <input type="text" class="search-box" placeholder="Search...">
+    <button class="search-btn">Search</button>
+</div>
+
+<div class="hero">
+  <h1>Welcome to the Networking Hub</h1>
+  <p>Connect with the future of networking at 8Tech Solutions - where opportunities and professionals meet!.</p>
+  </div>
+  
+  <div class="featured-ads">
+    <button class="nav-button prev" onclick="showPrevAd()">Prev</button>
+    
+  {% for net in networks %}
+  
+    <a href="link-to-ad2.html" class="ad">
+      <img src="{{net.item_image.url}}">
+      <h3>{{net.title}}</h3>
+      <p>{{net.description}}</p>
+      </a>
+
+   {% endfor %}
+
+  
+    
+    <button class="nav-button next" onclick="showNextAd()">Next</button>
+    </div>
+  
+
+  {% for item in items %}
+  
+  <div class="category">
+    <img src="{{item.image.url}}">
+    <h3>{{item.title}}</h3>
+  </div>
+
+{% endfor %}
+   
+  
+  
+  
+  <div class="video-container">
+    <iframe src="C:\Users\USER\Videos\vid2.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border-radius: 5px;"></iframe>
+    </div>
+    
+    <div class="video-description">
+    <p>This is a description of the video.</p>
+    </div>
+
+  </div>
+  
+
+<script>
+    document.querySelector('.search-btn').onclick = function() {
+var query = document.querySelector('.search-box').value;
+window.open('https://www.bing.com/search?q=' + encodeURIComponent(query));
+};
+
+let currentAdIndex = 0;
+const ads = document.querySelectorAll('.ad');
+const totalAds = ads.length;
+let autoScrollInterval;
+
+function showAd(index) {
+ads.forEach(ad => ad.classList.remove('active'));
+ads[index].classList.add('active');
+}
+
+function showNextAd() {
+currentAdIndex = (currentAdIndex + 1) % totalAds;
+showAd(currentAdIndex);
+}
+
+function showPrevAd() {
+currentAdIndex = (currentAdIndex - 1 + totalAds) % totalAds;
+showAd(currentAdIndex);
+}
+
+function startAutoScroll() {
+autoScrollInterval = setInterval(showNextAd,5000);
+}
+
+function stopAutoScroll() {
+clearInterval(autoScrollInterval);
+}
+
+// Start automatic carousel
+startAutoScroll();
+
+// Optional - Stop automatic carousel on user interaction
+document.querySelector('.featured-ads').addEventListener('mouseover', stopAutoScroll);
+document.querySelector('.featured-ads').addEventListener
+
+// Optional - Stop automatic carousel on user interaction
+document.querySelector('.featured-ads').addEventListener('mouseover', stopAutoScroll);
+document.querySelector('.featured-ads').addEventListener('mouseout', startAutoScroll);
+
+// Autoplay video
+document.addEventListener('DOMContentLoaded', function() {
+var videos = document.querySelectorAll('video');
+videos.forEach(function(video) {
+video.play();
+});
+});
+
+
+</script>
+<div class="footer">
+  <p>Contact us at info@networkinghub.com | Follow us on social media</p>
+  </div>
+
+{% endblock content %}

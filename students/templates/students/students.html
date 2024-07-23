@@ -1,0 +1,122 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+
+<div class="students">
+
+<div class="search-container">
+    <input type="text" class="search-box" placeholder="Search...">
+    <button class="search-btn">Search</button>
+</div>
+<div class="com">
+  <h2>COMRADES' <span>GUIDELINES</span></h2>
+
+
+
+<div class="dates">
+<h3>Important Dates</h3>
+
+<div class="tbl">
+
+<table>
+<tr>
+  <th>Event</th>
+  <th>Date</th>
+</tr>
+<tr>
+  <td>Fee Payment Deadline</td>
+  <td>{{dates.fee}}</td>
+</tr>
+<tr>
+  <td>Units Registration Deadline</td>
+  <td>{{dates.units}}</td>
+</tr>
+<tr>
+  <td>CAT 1</td>
+  <td>{{dates.cat1}}</td>
+</tr>
+<tr>
+  <td>CAT 2</td>
+  <td>{{dates.cat2}}</td>
+</tr>
+<tr>
+  <td>Examination Start</td>
+  <td>{{dates.examstart}}</td>
+</tr>
+<tr>
+  <td>Examination End</td>
+  <td>{{dates.examend}}</td>
+</tr>
+</table>
+
+</div>
+</div>
+
+<div class="unitsRegistration" id="unit">
+<h3>Units Registration Process</h3>
+
+<div class="video-container">
+<video controls>
+  <source src="C:\Users\USER\Videos\vid2.mp4" type="video/mp4">
+  <source src="C:\Users\USER\Videos\vid2.ogg" type="video/ogg">
+</video>
+</div>
+
+</div>
+
+<div class="guidelines">
+
+<h3>Student Guidelines</h3>
+
+{% for guid in guide %}
+
+<button class="accordion">{{guid.guideline}}</button>
+<div class="panel">
+<h3>{{guid.description|linebreaksbr}}</h3>
+</div>
+
+{% endfor %}
+
+
+
+</div>
+
+<div class="fee">
+
+<h3>Fee Structure</h3>
+
+<div class="fee">
+
+  {% comment %} <img src="{{projec.fee_image.url}}" style="width: 600px;"> {% endcomment %}
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+<script>
+    document.querySelector('.search-btn').onclick = function() {
+var query = document.querySelector('.search-box').value;
+window.open('https://www.bing.com/search?q=' + encodeURIComponent(query));
+};
+
+// Accordion functionality
+var acc = document.getElementsByClassName("accordion");
+for (var i = 0; i < acc.length; i++) {
+acc[i].addEventListener("click", function() {
+this.classList.toggle("active");
+var panel = this.nextElementSibling;
+if (panel.style.maxHeight) {
+panel.style.maxHeight = null;
+} else {
+panel.style.maxHeight = panel.scrollHeight + "px";
+}
+});
+}
+</script>
+
+
+
+{% endblock content %}
