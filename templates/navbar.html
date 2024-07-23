@@ -1,0 +1,20 @@
+
+<header class="header">
+
+    <a href="/" class="logo"><h2>8TECH SOLUTIONS</h2></a>
+
+      <input type="checkbox" id="check">
+
+      <label for="check" class="icons">
+          <i class="fa fa-bars" id="menu-icon"></i>
+          <i class="fa fa-times" id="close-icon"></i>
+      </label>
+
+      <nav class="navbar">
+          <a href="{% url 'students' %}" style="--i:0;">Student Guidelines</a>
+          <a href="{% url 'housing' %}" style="--i:1;">Housing Platform</a>
+          <a href="{% url 'networking' %}" style="--i:2;">Networking Hub</a>
+          <a href="{% url 'academic' %}" style="--i:3;">Academics</a>
+      </nav>
+      
+  </header>
