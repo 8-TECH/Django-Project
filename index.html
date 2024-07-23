@@ -1,315 +1,357 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Simple Classification</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <style>
-    * {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      text-decoration: none;
-    }
-    
-      body{
-        background:#fff;
-      width: 100%;
-      height: 100vh;
-      background-size:cover;
-      background-position:center;
-      background-attachment:fixed;
-    }
+{% extends "main.html" %}
 
-    footer {
-      text-align: center;
-      color: #fff;
-      background: #333;
-      padding:20px 10px;
-      position:fixed;
-      bottom: 0;
-      width: 100%;
-    }
-  
-    .sticky-header {
-    height:60px;
-    background-color:orange;
-    position: fixed;
-    top:0;
-    width: 100%;
-    z-index: 1000;
-    font-family:serif;
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-}
-  
-  button{
-  width:45%;
-  border-radius:5px;
-  margin:5px;
-  transition:all 0.5s;
-  background:#ffa200;
-  font-weight:bold;
-  font-family:serif;
-  font-size:13px;
-  height:35px;
-  border:none;
-    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.5);
-}
+{% load static %}
 
-    button a{
-  color:#000;
-    }
-    
-button:hover{
-  color:#fff;
-}
-
-  h5{
-    margin-top:130px;
-    color:#000;
-    font-size:18px;
-    font-weight:bold;
-    font-family:serif;
-  }
-  
-  .sem{
-    background:#fff;
-    padding:8px;
-    border-radius:10px;
-    margin:20px;
-    box-shadow: 1px 2px 10px 1px rgba(0,0,0,0.8);
-    
-  }
-  
-  
-  .tech{
-    font-size:20px;
-    font-weight:bold;
-    margin-left:20px;
-  }
-
-  img{
-    width:200px;
-    margin:20px;
-  }
-  .yes{
-    margin-top:100px;
-  }
-  .btn{
-    margin:40px 0px;
-  }
-
-  
-  
-  .dropdown-button {
-       background-color:#ffa200;
-       color:#000;
-       padding: 10px;
-            border: none;
-            cursor: pointer;
-   box-shadow: 1px 2px 10px 1px rgba(0,0,0,0.8);
-          margin-bottom:20px;
-          width:270px;
-        
-        }
-     
-      
-          .dropdown-content {
-            background:#ffa200;
-            margin-top:-10px;
-            display: none;
-            position: absolute;
-            width:300px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            left: 50%;
-  transform: translateX(-50%);
-      border-radius:5px;
-
-    }
-        
-    .dropdown-content a {
-         color: black;
-         padding: 12px 16px;
-        text-decoration: none;
-            display: block;
-          font-family:serif;
-          transition: all 0.5s;
-        }
-        
-       .dropdown-content a:hover {
-            color:#fff;
-        }
-        
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-  
-  </style>
-
-</head>
-
-<body>
-  
-<header class="sticky-header">
-  
-  <center> 
-  <div class="tech">CLASSIFICATIONS OF SUBSTANCES  
-  </div>
-  </center>
-  
-  </header>
+{% block content %}
 
 
-   
-    <center>
-    
-     <h5>Simple Classifications Of Substances</h5>
-        
-      <div class="sem">
-        
-    <h3>Classification Of Substances</h3>
-        
-        
-      <p>
-        Substances are basic forms of matter with specific properties, consisting of one type of atom or a combination of different atoms bonded together. They can exist as elements or compounds.
-      </p>
-        
-  </div>
-      
-      <h3>Separation of Immiscible Solid Liquid Mixtures</h3>
-      
-      <div class="sem">   
-    
-   <h3>Decantation</h3>
-       
-        <p>Decantation is the process of separation of liquid from solid and other immiscible (non-mixing) liquids, by removing the liquid layer at the top from the layer of solid or liquid below. 
-        </p>
-        
-        <p>
-The process can be carried out by tilting the mixture after pouring out the top layer.
-        </p>
-        
-        <p>       
-Examples of mixtures that can be separated through decantation: sand and water,maize grains and water,etc
-        </p>
-        
-       <img src="https://raw.githubusercontent.com/8-TECH/Classifications-of-Substances/main/Decant.jpg">
-        
-        
-      </div>
-    
-      
-      <div class="sem">   
-    
-   <h3>Filtration</h3>
-        
-        <p> Filtration-A filter paper and a funnel can be uses to separate a mixture of sand and water,fine sand particle will remain on the filter paper and are known as residue while the water will pass through the filter paper and will be called filtrate
-        </p>
-        
-         
-        <img src="https://raw.githubusercontent.com/8-TECH/Classifications-of-Substances/main/Filter.jpg">
-      
-      </div>
-      
-      
-      <div class="btn">
-        
-      <button><a href="https://chemistry.stackexchange.com/questions/10065/simple-kinetics-clarification">Find Notes</a></button>
-      <button><a href="https://gptgo.ai">Ask AI</a></button>
-      </div>
-      
-      
-      <div class="dropdown">
-        
-        <button class="dropdown-button">Questions</button>
-        
-      
-        <div class="dropdown-content">
-          
-          <p>
-1. What are the advantages of this method of separation over decantation?
-          </p>
-          <br>
-            <p> 
-2.what other type of mixtures can be separated using this method?
-            </p>
-          <br>
-            <p>  
-3. Why is decantation refered to as inaccurate method of separation?
-          </p>
+
+<body class="home">
+
+
+
+<div class="search-container">
+
+    <input type="text" class="search-box" placeholder="Search...">
+
+    <button class="search-btn">Search</button>
+
+</div>
+
+
+
+<div class="log">
+
+    <img src="{% static "images\8logo.jpg" %}">
+
+</div>
+
+
+
+<div class="scroll-container">
+
+
+
+{% for scrol in scroll %}
+
+<img src="{{scrol.scrol_images.url}}" %}">
+
+
+
+{% comment %} <h2 style="color: white;">tap: {{slid.slide_topic}}</h2> {% endcomment %}
+
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+
+
+
+<div class="slideshow-container">
+
+{% for slid in slide %}
+
+
+
+ <div class="mySlides">
+
+  <img src="{{slid.slide_image.url}}" style="width:100%">
+
+  <h2 style="color: white;">{{slid.slide_topic}}</h2>
+
+
+
+ </div>
+
+ 
+
+ {% endfor %}
+
+  
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+
+
+</div>  
+
+
+
+
+
+<section id="sepa">
+
+
+
+ <!--blog start -->
+
+<section id="blog" class="blog" >
+
+    <div class="container">
+
+
+
+        <div class="blog-content">
+
+            <div class="row">
+
+
+
+
+
+{% for new in news %}
+
+
+
+                <div class="col-md-4 col-sm-6">
+
+                    <div class="single-blog-item">
+
+                        <div class="single-blog-item-img">
+
+                        <img src="{{new.news_images.url}}">
+
+                        </div>
+
+                        <div class="single-blog-item-txt">
+
+                            <h2><a href="#">{{new.news_topic}}</a></h2>
+
+                            <h4>posted <span>by</span><a href="admin/">{{new.news_admin}}</a>{{new.posted_date}}</h4>
+
+                            <p>{{new.news_description}}</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+ {% endfor %}
+
+
+
+ 
+
+                <div class="col-md-4 col-sm-6">
+
+                    <div class="single-blog-item">
+
+                        <div class="single-blog-item-img">
+
+                            <!-- Autoplay Video Section -->
+
+<div class="video-section">
+
+<video  autoplay muted loop>
+
+<source src="Photos/vid2.mp4" type="video/mp4">
+
+</video>
+
+</div>
+
+                        </div>
+
+                        <div class="single-blog-item-txt">
+
+                            <h2><a href="Studentsguidelines.html#unit">How to find your Desired Place more quickly</a></h2>
+
+                            <h4>posted <span>by</span> <a href="#">admin</a> July 2024</h4>
+
+                            <p>
+
+                                Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod tempore incididunt ut labore et dolore magna.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+
+
+                <div class="col-md-4 col-sm-6">
+
+                    <div class="single-blog-item">
+
+                        <div class="single-blog-item-img">
+
+                            <video controls>
+
+            <source src="Photos/vid2.mp4" type="video/mp4">
+
+            <source src="Photos/vid2.ogg" type="video/ogg">
+
+          </video>
+
+                        </div>
+
+                        <div class="single-blog-item-txt">
+
+                            <h2><a href="#">How to find your Desired Place more quickly</a></h2>
+
+                            <h4>posted <span>by</span> <a href="#">admin</a> June 2024</h4>
+
+                            <p>
+
+                                Lorem ipsum dolor sit amet, consectetur de adipisicing elit, sed do eiusmod tempore incididunt ut labore et dolore magna.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-      
-    </div>
-      <br>
-      
-      <h3>GROUP MEMBERS</h3>
-      <br>
-      
-      <table>
-  
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Registration Number</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Bett Ben</td>
-      <td>E37/2680/2022</td>
-    </tr>
-    <tr>
-      <td>Ochola Ochieng</td>
-      <td>E37/2647/2020</td>
-    </tr>
-    <tr>
-      <td>Richard Ombui</td>
-      <td>E37/2679/2022</td>
-    </tr>
-    <tr>
-      <td>Ruth Bwari</td>
-      <td>E37/2829/2022</td>
-    </tr>
-        <tr>
-      <td>Deborah Nyaboken</td>
-      <td>E37/2855/2022</td>
-    </tr>
-    <tr>
-      <td>Kombo Brian</td>
-      <td>E37/6854/2022</td>
-    </tr>
-    <tr>
-      <td>Dalton Morara</td>
-      <td>E37/2838/2022</td>
-    </tr>
-    <tr>
-      <td>Daniel Emuryen</td>
-      <td>E37/2947/2021</td>
-    </tr>
-      <tr>
-      <td>Edward Leshan</td>
-      <td>E37/2721/2022</td>
-    </tr>
-    <tr>
-      <td>Elly Otieno</td>
-      <td>E37/2768/2022</td>
-    </tr>
-        
-        
-  </tbody>
-</table>
 
-        
-      
-      <p class="yes">Yes We Can</p>
+    </div><!--/.container-->
+
     
-    
-<footer>
-  &copy;2024 Classification Of Substances. All rights reserved.
-</footer>
-    </center>
+
+</section><!--/.blog-->
+
+<!--blog end -->
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<script>
+
+    document.querySelector('.search-btn').onclick = function() {
+
+var query = document.querySelector('.search-box').value;
+
+window.open('https://www.bing.com/search?q=' + encodeURIComponent(query));
+
+};
+
+
+
+document.querySelector('.scroll-container').addEventListener('wheel', function(e) {
+
+if (e.deltaY > 0) this.scrollLeft += 100;
+
+else this.scrollLeft -= 100;
+
+});
+
+
+
+
+
+var slideIndex = 1;
+
+showSlides(slideIndex);
+
+
+
+function plusSlides(n) {
+
+showSlides(slideIndex += n);
+
+}
+
+
+
+function showSlides(n) {
+
+var i;
+
+var slides = document.getElementsByClassName("mySlides");
+
+if (n > slides.length) {slideIndex = 1}    
+
+if (n < 1) {slideIndex = slides.length}
+
+for (i = 0; i < slides.length; i++) {
+
+slides[i].style.display = "none";  
+
+}
+
+slides[slideIndex-1].style.display = "block";  
+
+}
+
+
+
+// Auto-advance every 3 seconds (adjust as needed)
+
+setInterval(function() {
+
+plusSlides(1);
+
+}, 3000); // Change the duration (in milliseconds) as desired
+
+
+
+window.addEventListener('scroll', function() {
+
+var scrollPosition = window.scrollY;
+
+var whitePoint = 600; // Set the scroll position you want for the color change
+
+if (scrollPosition > whitePoint) {
+
+document.body.style.backgroundColor = 'white';
+
+} else {
+
+document.body.style.backgroundColor = ''; // Or set it back to any other color
+
+}
+
+});
+
+
+
+// Autoplay video
+
+document.addEventListener('DOMContentLoaded', function() {
+
+var videos = document.querySelectorAll('video');
+
+videos.forEach(function(video) {
+
+video.play();
+
+});
+
+});
+
+
+
+</script>
 
 </body>
-    </html>
+
+
+
+{% endblock content %}
